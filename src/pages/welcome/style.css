@@ -1,0 +1,51 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-image: url('./img/bg.jpg');
+    background-size: cover;
+}
+
+.cover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.info_wrap{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10%;
+}
+.welcome{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2%;
+
+}
+.welcome_text{
+    text-align: center;
+    color: #fff;
+    font-size: 3rem;
+}
+
+.welcome_descr_text{
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+
+}
+
+
+  .cursor-follower {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    pointer-events: none; 
+  }
