@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css'
 
-function LoginPage(){
+function LoginPage() {
 
     const [password, setPassword] = useState<string>('');
     const [email, setEmail] = useState<string>('');
@@ -20,23 +20,58 @@ function LoginPage(){
 
             const data = await response.json();
             console.log(data);
-            if (response.ok) {                        
-                setStatus('Авторизация успешна')       
-            } else {        
+            if (response.ok) {
+                setStatus('Авторизация успешна')
+            } else {
                 setStatus('Неверные учетные данные');
             }
         } catch (error) {
             console.error(error);
             // Обработка ошибок
         }
-        
+
     };
+
+
+
+    return (
+        <div className='auth_container'>
+            <div className='header'>
+                <img src={require('../../img/cosmoLogo.png')} className='logo_image' />
+                <p>Cosmotask</p>
+
+            </div>
+            <div className='auth_box'>
+                <div className='authorization'>
+                    <h1>Log In</h1>
+                    {status == '' ? <p>Войдите в свою учетную запись,<br />чтобы присоединиться к решению задач!</p> :
+                        <p>{status}</p>
+                    }
+
+                    <div className='auth_form'>
+                        <label className='form_label'>
+                            Email:<br />
+                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your email" />
+                        </label>
+                        <label className='form_label'>
     
+                            Password:   <br />
+                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="Your password"/>
+                        </label>
+                     
+                     {/* <div className='login_bttn_wrap'> */}
+                        <button className='login_bttn'  onClick={handleLogin}>Войти</button>
+                        {/* </div> */}
+                    </div>
 
 
-    return(
-        <div>
-            <h1>Авторизация</h1>
+                </div>
+                <div className='illustration'>
+                    <img src={require('./img/seminar.png')} />
+                </div>
+            </div>
+
+            {/* <h1>Раскройте свой потенциал с помощью эффективного планирования времени!</h1>
             {status}
             <div>
                 <label>
@@ -50,11 +85,11 @@ function LoginPage(){
                 <br />
               
             </div>
-            <button onClick={handleLogin}>Войти</button>
+            <button onClick={handleLogin}>Войти</button> */}
         </div >
     )
 }
-    
+
 
 
 export default LoginPage;

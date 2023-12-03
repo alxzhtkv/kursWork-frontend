@@ -1,0 +1,116 @@
+.auth_container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #EFEAE6;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+}
+
+.auth_box{
+    width: 70%;
+    height: 70%;
+    /* background-color: #3B3C37; */
+    background-color: #000;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    border-radius: 1rem;
+    /* box-shadow: 0 0 10px #3B3C37; */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+ 
+   
+}
+
+/* .authorization>h1{
+    width: 100%;
+    text-align: center;
+} */
+.authorization{
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    color: #fff; 
+    padding: 2rem;
+    font-family: 'Comfortaa', sans-serif;
+
+}
+
+.auth_form{
+    /* border: 1px solid #fff;
+    border-radius: 1rem; */
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.form_label{
+    margin-bottom: 0.5rem;
+}
+
+.form_label>input{
+    margin-top: 0.5rem;
+    width: 50%;
+    padding: 0.5rem 1rem;
+    color: #000;
+    border-radius: 0.5rem;
+    border: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+input:focus {
+    outline: none;
+  }
+
+.illustration{
+    flex: 0.5;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration>img{
+    width: 100%;
+    height: 100%;
+    /* border-radius: 1rem; */
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.login_bttn{
+    cursor: pointer;
+    margin-top: 10%;
+    margin-left: 2%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.3rem;
+    background-color: #fff;
+    color: #000;
+    /* font-family: 'Comfortaa', sans-serif; */
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: none;
+    transition: .3s linear;
+    box-shadow: 0 0 0 7px #000, 0 0 0 12px #fff;
+}
+
+.login_bttn_wrap{
+    margin-top: 10%;
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.login_bttn:hover {
+    /* font-weight: 900; */
+    /* box-shadow:none; */
+}
+

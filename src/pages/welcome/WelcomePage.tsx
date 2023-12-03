@@ -3,6 +3,7 @@ import './style.css'
 import { useNavigate } from 'react-router-dom';
 
 
+
 function WelcomePage() {
 
 
@@ -19,27 +20,34 @@ function WelcomePage() {
     return (
 
         <div className='container'>
+            <div className='header'>
+                <img src={require('../../img/cosmoLogo.png')} className='logo_image' />
+                <p>Cosmotask</p>
 
-          
+            </div>
+            <div className='info_wrap'>
 
-            <div className='cover'>
-         
-                <div className='info_wrap'>
-                    <div className='welcome'>
-                    <p className='welcome_text'>Управляйте временем!</p>
+                <div className='text_wrap'>
+                    <p className='welcome_text'>Управляй своим временем<br /> правильно!</p>
                     <p className='welcome_descr_text'>Достижение целей становится проще!</p>
-                    <button onClick={()=>goToLogin()}>
+                </div>
+
+                <div className='buttons_wrap'>
+                    <button className='btn' onClick={() => goToLogin()}>
                         Вход
                     </button>
 
-                    <button onClick={()=>goToRegistration()}>
+                    <button className='btn' onClick={() => goToRegistration()}>
                         Регистрация
                     </button>
-                    </div>
-                  
-
                 </div>
-              </div>
+
+
+
+            </div>
+            <div className='image_wrap'>
+                <img src={require('./img/workerllustration.png')} className='preview_image' />
+            </div>
         </div>
     )
 }
