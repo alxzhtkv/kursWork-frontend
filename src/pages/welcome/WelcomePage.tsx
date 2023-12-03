@@ -2,18 +2,17 @@ import React, { useState } from 'react';
 import './style.css'
 import { useNavigate } from 'react-router-dom';
 
-interface Dot {
-    id: number;
-    x: number;
-    y: number;
-}
 
 function WelcomePage() {
 
 
     const navigate = useNavigate();
 
-    const goToContactPage = () => {
+    const goToLogin = () => {
+        navigate('/login');
+    };
+
+    const goToRegistration = () => {
         navigate('/registration');
     };
 
@@ -29,7 +28,11 @@ function WelcomePage() {
                     <div className='welcome'>
                     <p className='welcome_text'>Управляйте временем!</p>
                     <p className='welcome_descr_text'>Достижение целей становится проще!</p>
-                    <button onClick={()=>goToContactPage()}>
+                    <button onClick={()=>goToLogin()}>
+                        Вход
+                    </button>
+
+                    <button onClick={()=>goToRegistration()}>
                         Регистрация
                     </button>
                     </div>

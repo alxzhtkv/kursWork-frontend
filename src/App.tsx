@@ -8,6 +8,7 @@ import {
 import WelcomePage from './pages/welcome/WelcomePage';
 import './index.css'
 import RegistrationPage from './pages/registration/RegistrationPage';
+import LoginPage from './pages/login/LoginPage';
 
 const App: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -54,6 +55,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path='/' element={<WelcomePage />} />
           <Route path ='/registration' element={<RegistrationPage/>}/>
+          <Route path='/login' element={<LoginPage/>}/>
         </Routes>
       {/* </div> */}
     </Router>

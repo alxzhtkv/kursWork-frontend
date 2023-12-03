@@ -5,6 +5,7 @@ function LoginPage(){
 
     const [password, setPassword] = useState<string>('');
     const [email, setEmail] = useState<string>('');
+    const [status, setStatus] = useState<string>('')
 
 
     const handleLogin = async () => {
@@ -19,10 +20,15 @@ function LoginPage(){
 
             const data = await response.json();
             console.log(data);
+            if (response.ok) {                        
+                setStatus('Авторизация успешна')       
+            } else {        
+                setStatus('Неверные учетные данные');
+            }
         } catch (error) {
             console.error(error);
+            // Обработка ошибок
         }
-
         
     };
     
@@ -31,6 +37,7 @@ function LoginPage(){
     return(
         <div>
             <h1>Авторизация</h1>
+            {status}
             <div>
                 <label>
                     Email:
@@ -43,7 +50,11 @@ function LoginPage(){
                 <br />
               
             </div>
+            <button onClick={handleLogin}>Войти</button>
         </div >
     )
 }
     
+
+
+export default LoginPage;

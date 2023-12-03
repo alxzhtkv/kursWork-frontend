@@ -22,6 +22,8 @@ const RegistrationPage: React.FC<RegistrationPageProps> = () => {
     const [password, setPassword] = useState<string>('');
     const [email, setEmail] = useState<string>('');
 
+    const [status, setStatus] = useState<string>('')
+
     const navigate = useNavigate();
 
     const handlePositionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -40,7 +42,7 @@ const RegistrationPage: React.FC<RegistrationPageProps> = () => {
 
     const handleRegister = async () => {
         try {
-            const response = await fetch('http://localhost:8000/register', {
+            const response = await fetch('http://localhost:8000/registration', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -50,6 +52,12 @@ const RegistrationPage: React.FC<RegistrationPageProps> = () => {
 
             const data = await response.json();
             console.log(data);
+            if(data.message){
+                setStatus('Пользователь уже существует')
+            }
+            else{
+                setStatus('Пользователь успешно зарегистирован!')
+            }
         } catch (error) {
             console.error(error);
         }
@@ -61,6 +69,7 @@ const RegistrationPage: React.FC<RegistrationPageProps> = () => {
     return (
         <div>
             <h1>Регистрация</h1>
+            {status}
             <div>
                 <label>
                     Email:
@@ -87,9 +96,12 @@ const RegistrationPage: React.FC<RegistrationPageProps> = () => {
                 </label>
                 <br />
                 
-                <br />
-                <button type="button" onClick={generateRandomPassword}>Генерировать пароль</button>
-                <div>Сгенерированный пароль: {password}</div>
+                <br />   <label>
+                    Пароль:
+                    <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+                </label>
+                {/* <button type="button" onClick={generateRandomPassword}>Генерировать пароль</button>
+                <div>Сгенерированный пароль: {password}</div> */}
                 <br />
                 <button onClick={handleRegister}>Зарегистрироваться</button>
 
