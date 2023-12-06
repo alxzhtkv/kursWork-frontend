@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import './style.css'
+import { useAppDispatch } from '../../store/hooks';
+import { setUser } from '../../store/slices/user';
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
 
     const [password, setPassword] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [status, setStatus] = useState<string>('')
+
+    const navigate = useNavigate();
+    const dispatch = useAppDispatch();
 
 
     const handleLogin = async () => {
@@ -22,6 +28,8 @@ function LoginPage() {
             console.log(data);
             if (response.ok) {
                 setStatus('Авторизация успешна')
+                dispatch(setUser(data.user))
+                navigate("/main")
             } else {
                 setStatus('Неверные учетные данные');
             }
