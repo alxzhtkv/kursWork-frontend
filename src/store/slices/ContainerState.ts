@@ -7,7 +7,7 @@ interface IContainerState {
 }
 
 const initialState: IContainerState = {
-    name: 'projects',
+    name: 'project',
 }
 export const ContainerStateSlice = createSlice({
     name:'containerState',

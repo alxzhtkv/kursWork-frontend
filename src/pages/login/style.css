@@ -1,45 +1,51 @@
-.auth_container{
+.auth_container {
     position: relative;
     width: 100%;
     height: 100%;
     display: flex;
-    background-color: #EFEAE6;
+    background-color: rgb(243, 244, 249);
     align-items: center;
     justify-content: center;
     background-size: cover;
 }
 
-.auth_box{
-    width: 70%;
+.auth_box {
+    /* width: 60%; */
     height: 70%;
     /* background-color: #3B3C37; */
-    background-color: #000;
+    background-color: #fff;
+    /* background-color: #000; */
     display: flex;
     align-self: center;
     justify-content: center;
     border-radius: 1rem;
     /* box-shadow: 0 0 10px #3B3C37; */
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
- 
-   
+
+
 }
 
 /* .authorization>h1{
     width: 100%;
     text-align: center;
 } */
-.authorization{
-    flex: 0.5;
+.authorization {
+    flex: 0.4;
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
-    color: #fff; 
-    padding: 2rem;
+    color: rgb(95, 116, 141);
+    /* color: #fff;  */
+    padding: 2rem 0rem 2rem 2rem;
     font-family: 'Comfortaa', sans-serif;
 
 }
 
-.auth_form{
+.authorization>h1{
+    color: rgb(36, 153, 239);
+}
+
+.auth_form {
     /* border: 1px solid #fff;
     border-radius: 1rem; */
     display: flex;
@@ -47,34 +53,35 @@
     row-gap: 1rem;
 }
 
-.form_label{
+.form_label {
     margin-bottom: 0.5rem;
 }
 
-.form_label>input{
+.form_label>input {
+    border: 1px solid rgb(211, 230, 243);
     margin-top: 0.5rem;
-    width: 50%;
+    width: 80%;
     padding: 0.5rem 1rem;
-    color: #000;
+    color: rgb(18, 31, 67);
     border-radius: 0.5rem;
-    border: 0;
+    /* border: 0; */
     font-size: 1rem;
     font-weight: 500;
 }
 
 input:focus {
     outline: none;
-  }
+}
 
-.illustration{
-    flex: 0.5;
+.illustration {
+    flex: 0.6;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.illustration>img{
+.illustration>img {
     width: 100%;
     height: 100%;
     /* border-radius: 1rem; */
@@ -82,7 +89,7 @@ input:focus {
     border-bottom-right-radius: 1rem;
 }
 
-.login_bttn{
+.login_bttn {
     cursor: pointer;
     margin-top: 10%;
     margin-left: 2%;
@@ -91,26 +98,21 @@ input:focus {
     align-items: center;
     justify-content: center;
     padding: 0.5rem 0.3rem;
-    background-color: #fff;
-    color: #000;
+    color: rgb(36, 153, 239);
+    background-color: rgb(211, 230, 243);
+
     /* font-family: 'Comfortaa', sans-serif; */
     font-size: 1.4rem;
     font-weight: 500;
     border-radius: 0.5rem;
     border: none;
     transition: .3s linear;
-    box-shadow: 0 0 0 7px #000, 0 0 0 12px #fff;
+    /* box-shadow: 0 0 0 7px #000, 0 0 0 12px #fff; */
 }
 
-.login_bttn_wrap{
-    margin-top: 10%;
-    /* width: 100%; */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
+
+
 .login_bttn:hover {
-    /* font-weight: 900; */
-    /* box-shadow:none; */
+    background-color: rgb(36, 153, 239);
+    color: rgb(211, 230, 243);
 }
-

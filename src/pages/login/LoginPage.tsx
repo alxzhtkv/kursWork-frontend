@@ -3,6 +3,7 @@ import './style.css'
 import { useAppDispatch } from '../../store/hooks';
 import { setUser } from '../../store/slices/user';
 import { useNavigate } from 'react-router-dom';
+import { access } from 'fs';
 
 function LoginPage() {
 
@@ -28,7 +29,7 @@ function LoginPage() {
             console.log(data);
             if (response.ok) {
                 setStatus('Авторизация успешна')
-                dispatch(setUser(data.user))
+                localStorage.setItem('accessToken', data.accessToken)
                 navigate("/main")
             } else {
                 setStatus('Неверные учетные данные');
@@ -75,7 +76,7 @@ function LoginPage() {
 
                 </div>
                 <div className='illustration'>
-                    <img src={require('./img/seminar.png')} />
+                    <img src={require('./img/seminar.png')} alt='image'/>
                 </div>
             </div>
 
