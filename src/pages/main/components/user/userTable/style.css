@@ -1,0 +1,31 @@
+.css-11xur9t-MuiPaper-root-MuiTableContainer-root{
+    border-radius: 0.6rem!important;
+    background-color: rgb(255, 255, 255)!important;;
+    color: rgb(18, 31, 67)!important;;
+}
+
+.delete_icon{
+   color: rgb(36, 153, 239);
+
+}
+
+
+.delete_icon:hover{
+    color: black;
+}
+
+
+.css-dsuxgy-MuiTableCell-root,.css-dv0mq-MuiTableCell-root{
+    border: none!important;
+}
+
+.MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1ex1afd-MuiTableCell-root{
+    border: none!important;
+}
+.css-1azl6jz-MuiTableCell-root,.css-1ygcj2i-MuiTableCell-root{
+    background-color: rgb(211, 230, 243);
+}
+
+.css-vtdehq-MuiTableCell-root{
+    border: none!important;
+}

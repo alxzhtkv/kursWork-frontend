@@ -1,0 +1,12 @@
+.users{
+    display: flex; 
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.charts_wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}

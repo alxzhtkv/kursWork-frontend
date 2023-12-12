@@ -1,0 +1,7 @@
+.user_charts {
+    background-color: white;
+    border-radius: 0.6rem;
+    padding: 0.5rem 0.3rem;
+    flex: 0.5;
+    max-height: 200rem;
+}
