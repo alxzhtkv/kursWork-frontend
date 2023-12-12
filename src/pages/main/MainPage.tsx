@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { IEmployee } from '../types';
 import { setCurrentContainerState } from '../../store/slices/ContainerState';
 import Info from './components/info/Info';
+import { setCurrentProjectState } from '../../store/slices/currentProject';
 
 
 function MainPage() {
@@ -18,19 +19,23 @@ function MainPage() {
     const [isProjectsOpen, setIsProjectsOpen] = useState<boolean>(false)
     const dispatch = useAppDispatch();
 
-    const projects_names = [
-        { name: 'Project 1' },
-        { name: 'Project 2' },
-        { name: 'Project 3' },
-        { name: 'Project 4' },
-        { name: 'Project 5' },
-        { name: 'Project 6' },
-        { name: 'Project 7' },
-        { name: 'Project 8' },
-        { name: 'Project 9' },
-        { name: 'Project 10' },
-        { name: 'Project 11' },
-    ]
+    const projects = [
+        { name: 'Разработка онлайн магазина для электроники' },
+        { name: 'Миграция базы данных на облачную платформу' },
+        { name: 'Оптимизация производительности CRM-системы' },
+        { name: 'Создание мобильного приложения для заказа еды' },
+        { name: 'Реализация искусственного интеллекта для автоматизации процессов' },
+        { name: 'Интеграция платежной системы для электронной коммерции' },
+        { name: 'Автоматизация тестирования мобильных приложений' },
+        { name: 'Разработка блокчейн-проекта для цифровой идентификации' },
+        { name: 'Обновление системы безопасности сетевой инфраструктуры' },
+        { name: 'Оптимизация пользовательского интерфейса веб-приложения' },
+        { name: 'Разработка системы управления контентом для новостного портала' },
+        { name: 'Имплементация аналитической платформы для данных о продажах' },
+        { name: 'Создание облачного хранилища данных для хранения файлов' },
+        { name: 'Разработка чат-бота для клиентской поддержки' },
+        { name: 'Интеграция CRM-системы с системой управления проектами' },
+    ];
 
     function getCurrentDate() {
         const currentDate = new Date();
@@ -82,6 +87,11 @@ function MainPage() {
 
     };
 
+    function openProject(id: number, name: string){
+        dispatch(setCurrentContainerState('project'))
+        dispatch(setCurrentProjectState(name))
+    }
+
 
 
     return (
@@ -106,16 +116,17 @@ function MainPage() {
                 {isProjectsOpen &&
                     <div className='projects_open'>
 
-                        <div className='new_project'>Добавить проект
-                            <FaPlus/></div>
+                        <div className='new_project'>
+                            <p>Добавить проект</p>
+                        </div>
 
 
 
 
-                        {projects_names.map((nameObject, index) => (
+                        {projects.map((nameObject, index) => (
                             <p className='projects_names'
                                 key={index}
-                                onClick={() => dispatch(setCurrentContainerState('project'))}>
+                                onClick={() =>openProject(index, nameObject.name)}>
                                 {nameObject.name}</p>
                         ))}
                     </div>

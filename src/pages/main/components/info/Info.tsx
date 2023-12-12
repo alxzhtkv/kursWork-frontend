@@ -6,6 +6,7 @@ import './style.css'
 import UserPieCharts from '../user/userCharts/UserPieCharts';
 import UserLineCharts from '../user/userCharts/UserLineCharts';
 import FilesTable from '../files/FilesTable';
+import Project from '../project/Project';
 
 function Info(): JSX.Element | null {
   const containerState = useAppSelector((state) => state.containerState.name);
@@ -42,7 +43,13 @@ function Info(): JSX.Element | null {
         return <p>STATISTICS</p>
       }
       case infoStates.PROJECT: {
-        return <p>PROJECT</p>
+        return(
+          <>
+          <p>PROJECT</p>
+          <Project/>
+          </>
+        )
+        
       }
       default: {
         return null;
