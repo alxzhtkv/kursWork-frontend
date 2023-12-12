@@ -43,11 +43,8 @@ function Info(): JSX.Element | null {
         return <p>STATISTICS</p>
       }
       case infoStates.PROJECT: {
-        return(
-          <>
-          <p>PROJECT</p>
+        return( 
           <Project/>
-          </>
         )
         
       }

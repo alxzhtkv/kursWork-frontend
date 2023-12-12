@@ -8,16 +8,19 @@ import { IEmployee } from '../types';
 import { setCurrentContainerState } from '../../store/slices/ContainerState';
 import Info from './components/info/Info';
 import { setCurrentProjectState } from '../../store/slices/currentProject';
+import { infoStates } from './config/enums';
 
 
 function MainPage() {
 
     const navigate = useNavigate()
 
+    const tab = useAppSelector((state) => state.containerState.name)
     const [date, setdate] = useState<string>()
     const [employee, setEmployee] = useState<IEmployee | null>()
     const [isProjectsOpen, setIsProjectsOpen] = useState<boolean>(false)
     const dispatch = useAppDispatch();
+
 
     const projects = [
         { name: 'Разработка онлайн магазина для электроники' },
@@ -87,7 +90,7 @@ function MainPage() {
 
     };
 
-    function openProject(id: number, name: string){
+    function openProject(id: number, name: string) {
         dispatch(setCurrentContainerState('project'))
         dispatch(setCurrentProjectState(name))
     }
@@ -102,13 +105,13 @@ function MainPage() {
                     <img src={require('../../img/cosmoLogo.png')} className='logo_image' />
                     Cosmotask
                 </div>
-                <div className='menu_item' onClick={() => dispatch(setCurrentContainerState('users'))}>
+                <div className={tab === infoStates.USERS ? 'selected_menu_item' : 'menu_item'} onClick={() => dispatch(setCurrentContainerState('users'))}>
                     <FaUserLarge size={14} />
-                    <p>Пользователи</p>
+                    <p >Пользователи</p>
                 </div>
 
 
-                <div className='menu_item' onClick={() => setIsProjectsOpen((prev) => !prev)}>
+                <div className={tab === infoStates.PROJECT ? 'selected_menu_item' : 'menu_item'} onClick={() => setIsProjectsOpen((prev) => !prev)}>
                     <FaFolder size={14} />
                     <p>Проекты</p>
                     <FaAngleDown style={{ marginLeft: '45%' }} />
@@ -126,26 +129,26 @@ function MainPage() {
                         {projects.map((nameObject, index) => (
                             <p className='projects_names'
                                 key={index}
-                                onClick={() =>openProject(index, nameObject.name)}>
+                                onClick={() => openProject(index, nameObject.name)}>
                                 {nameObject.name}</p>
                         ))}
                     </div>
                 }
-                <div className='menu_item' onClick={() => dispatch(setCurrentContainerState('files'))}>
+                <div className={tab === infoStates.FILES ? 'selected_menu_item' : 'menu_item'} onClick={() => dispatch(setCurrentContainerState('files'))}>
                     <FaFile size={14} />
-                    <p>Файлы</p>
+                    <p >Файлы</p>
                 </div>
-                <div className='menu_item' onClick={() => dispatch(setCurrentContainerState('statistics'))}>
+                <div className={tab === infoStates.STATISTICS ? 'selected_menu_item' : 'menu_item'} onClick={() => dispatch(setCurrentContainerState('statistics'))}>
                     <FaChartSimple size={14} />
                     <p>Статистика</p>
                 </div>
-                <div className='menu_item' onClick={() => dispatch(setCurrentContainerState('comments'))}>
+                <div className={tab === infoStates.COMMENTS ? 'selected_menu_item' : 'menu_item'} onClick={() => dispatch(setCurrentContainerState('comments'))}>
                     <FaCommentDots size={14} />
-                    <p>Комментарии</p>
-                    <div className='circle'>
+                    <p >Комментарии</p>
+                    {/* <div className='circle'>
                         <p>4</p>
 
-                    </div>
+                    </div> */}
                     {/* <FaAngleDown style={{ marginLeft: '45%' }} /> */}
                 </div>
 
